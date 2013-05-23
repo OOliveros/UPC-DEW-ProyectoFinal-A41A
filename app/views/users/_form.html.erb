@@ -1,0 +1,62 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Tipo_de_persona %><br />
+    <%= f.select(:typeuser, [['Alumno', 1], ['Usuario', 2]],:prompt => true) %>
+  </div>
+  <div class="field">
+    <%= f.label :Nombres %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Apellido_paterno %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :Apellido_materno %><br />
+    <%= f.text_field :secondlastname %>
+  </div>
+  <div class="field">
+    <%= f.label :Sexo %><br />
+     <%= f.select(:sex, [['Masculino', 1], ['Femenino', 2],['No especifica',3]],:prompt => true) %>
+  </div>
+  </div>
+  <div class="field">
+    <%= f.label :Tipo_de_documento %><br />
+    <%= f.select(:typedocument, [['DNI', 1], ['TIU', 2]],:prompt => true) %>
+  </div>
+  <div class="field">
+    <%= f.label :Documento %><br />
+    <%= f.text_field :document %>
+  </div>
+  <div class="field">
+    <%= f.label :Dirección_de_correo_electrónico %><br />
+    <%= f.text_field :email %>
+  </div>
+    <div class="field">
+    <%= f.label :Vuelve_a_escribir_dirección_de_correo_electrónico %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :Crea_una_contraseña %><br />
+    <%= f.text_field :password %>
+  </div>  
+   <div class="field">
+    <%= f.label :Vuelve_a_escribir_la_contraseña %><br />
+    <%= f.text_field :password %>
+  </div> 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
