@@ -18,7 +18,11 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     assert_difference('User.count') do
+<<<<<<< HEAD
       post :create, user: { dateregister: @user.dateregister, document: @user.document, email: @user.email, lastname: @user.lastname, name: @user.name, password: @user.password, secondlastname: @user.secondlastname, sex: @user.sex, type: @user.type, typedocument: @user.typedocument }
+=======
+      post :create, user: { dateregister: @user.dateregister, document: @user.document, email: @user.email, lastname: @user.lastname, name: @user.name, password: @user.password, secondlastname: @user.secondlastname, sex: @user.sex, typedocument: @user.typedocument, typeuser: @user.typeuser }
+>>>>>>> fcdccdd71f4f6da71016d84dc7f00053d264b3ec
     end
 
     assert_redirected_to user_path(assigns(:user))
@@ -35,7 +39,11 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   test "should update user" do
+<<<<<<< HEAD
     put :update, id: @user, user: { dateregister: @user.dateregister, document: @user.document, email: @user.email, lastname: @user.lastname, name: @user.name, password: @user.password, secondlastname: @user.secondlastname, sex: @user.sex, type: @user.type, typedocument: @user.typedocument }
+=======
+    put :update, id: @user, user: { dateregister: @user.dateregister, document: @user.document, email: @user.email, lastname: @user.lastname, name: @user.name, password: @user.password, secondlastname: @user.secondlastname, sex: @user.sex, typedocument: @user.typedocument, typeuser: @user.typeuser }
+>>>>>>> fcdccdd71f4f6da71016d84dc7f00053d264b3ec
     assert_redirected_to user_path(assigns(:user))
   end
 

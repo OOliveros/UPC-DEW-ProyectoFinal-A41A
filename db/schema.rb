@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130521051208) do
+=======
+ActiveRecord::Schema.define(:version => 20130521062114) do
+>>>>>>> fcdccdd71f4f6da71016d84dc7f00053d264b3ec
 
   create_table "users", :force => true do |t|
     t.integer  "typeuser"
