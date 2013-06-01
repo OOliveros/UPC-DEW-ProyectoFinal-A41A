@@ -1,12 +1,12 @@
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+      <h2><%= pluralize(@user.errors.count, "error") %> registrar usuario:</h2>
 
       <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @user.errors.each_with_index do |msg, i| %>
+        <li><%= msg[1] %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -46,7 +46,7 @@
   </div>
     <div class="field">
     <%= f.label :Vuelve_a_escribir_dirección_de_correo_electrónico %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email_confirmation %>
   </div>
   <div class="field">
     <%= f.label :Crea_una_contraseña %><br />
@@ -54,9 +54,9 @@
   </div>  
    <div class="field">
     <%= f.label :Vuelve_a_escribir_la_contraseña %><br />
-    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
   </div> 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :Registrar %>
   </div>
 <% end %>

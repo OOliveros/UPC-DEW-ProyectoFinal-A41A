@@ -11,7 +11,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130521062114) do
+ActiveRecord::Schema.define(:version => 20130601205058) do
+
+  create_table "locals", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "district"
+    t.string   "url"
+    t.string   "phone"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.integer  "typeuser"
@@ -24,8 +34,10 @@ ActiveRecord::Schema.define(:version => 20130521062114) do
     t.string   "email"
     t.string   "password"
     t.date     "dateregister"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+    t.string   "email_confirmation"
+    t.string   "password_confirmation"
   end
 
 end
