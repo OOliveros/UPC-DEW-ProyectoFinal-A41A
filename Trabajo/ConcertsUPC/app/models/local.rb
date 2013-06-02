@@ -1,5 +1,6 @@
 class Local < ActiveRecord::Base
   attr_accessible :address, :name, :zona, :latitude, :longitude, :gmaps, :phone
+  has_many :concerts
 
   acts_as_gmappable
 
