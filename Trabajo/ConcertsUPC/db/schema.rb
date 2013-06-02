@@ -11,18 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130602051842) do
-
-  create_table "locals", :force => true do |t|
-    t.string   "name"
-    t.string   "address"
-    t.string   "zona"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-    t.float    "longitude"
-    t.float    "latitude"
-    t.string   "phone"
-ActiveRecord::Schema.define(:version => 20130602053003) do
+ActiveRecord::Schema.define(:version => 20130602061203) do
 
   create_table "groups", :force => true do |t|
     t.string   "group"
@@ -34,6 +23,18 @@ ActiveRecord::Schema.define(:version => 20130602053003) do
   end
 
   add_index "groups", ["user_id"], :name => "index_groups_on_user_id"
+
+  create_table "locals", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "zona"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "phone"
+    t.boolean  "gmaps"
+  end
 
   create_table "register_groups", :force => true do |t|
     t.string   "musical_group"
