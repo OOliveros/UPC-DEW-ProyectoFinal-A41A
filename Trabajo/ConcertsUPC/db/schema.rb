@@ -22,6 +22,26 @@ ActiveRecord::Schema.define(:version => 20130602051842) do
     t.float    "longitude"
     t.float    "latitude"
     t.string   "phone"
+ActiveRecord::Schema.define(:version => 20130602053003) do
+
+  create_table "groups", :force => true do |t|
+    t.string   "group"
+    t.integer  "user_id"
+    t.string   "list"
+    t.string   "style"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "groups", ["user_id"], :name => "index_groups_on_user_id"
+
+  create_table "register_groups", :force => true do |t|
+    t.string   "musical_group"
+    t.string   "member"
+    t.string   "lista"
+    t.string   "estilo"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|
