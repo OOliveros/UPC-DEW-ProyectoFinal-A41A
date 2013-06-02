@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601232958) do
+ActiveRecord::Schema.define(:version => 20130602051842) do
+
+  create_table "locals", :force => true do |t|
+    t.string   "name"
+    t.string   "address"
+    t.string   "zona"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+    t.float    "longitude"
+    t.float    "latitude"
+    t.string   "phone"
+  end
 
   create_table "users", :force => true do |t|
     t.integer  "typeuser"

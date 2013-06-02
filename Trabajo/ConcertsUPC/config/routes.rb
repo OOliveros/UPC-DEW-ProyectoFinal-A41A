@@ -1,4 +1,7 @@
 ConcertsUPC::Application.routes.draw do
+  resources :locals
+
+
   resources :users
 
 
