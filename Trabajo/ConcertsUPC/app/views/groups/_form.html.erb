@@ -12,20 +12,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :group %><br />
-    <%= f.text_field :group %>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :user %><br />
-    <%= f.collection_select :user_id, User.all, :id, :name, :prompt => true %>
-  </div>
-  <div class="field">
-    <%= f.label :list %><br />
-    <%= f.text_field :list %>
-  </div>
-  <div class="field">
-    <%= f.label :style %><br />
-    <%= f.select(:style, [['rock', 1], ['punk', 2]],:prompt => true) %>
+    <%= f.label :genre %><br />
+    <%= f.text_field :genre %>
   </div>
   <div class="actions">
     <%= f.submit %>

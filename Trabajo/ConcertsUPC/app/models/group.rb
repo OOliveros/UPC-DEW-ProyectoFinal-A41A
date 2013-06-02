@@ -1,4 +1,3 @@
 class Group < ActiveRecord::Base
-  attr_accessible :group, :list, :style, :user_id
-  has_many :user
+  attr_accessible :genre, :name
 end
