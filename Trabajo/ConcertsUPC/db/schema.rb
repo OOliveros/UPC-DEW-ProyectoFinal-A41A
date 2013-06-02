@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130601232958) do
+ActiveRecord::Schema.define(:version => 20130602003610) do
+
+  create_table "register_groups", :force => true do |t|
+    t.string   "musical_group"
+    t.string   "member"
+    t.string   "lista"
+    t.string   "estilo"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.integer  "typeuser"
