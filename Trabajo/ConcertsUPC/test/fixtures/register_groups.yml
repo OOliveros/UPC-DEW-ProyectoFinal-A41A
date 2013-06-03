@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  musical_group: MyString
+  member: MyString
+  lista: MyString
+  estilo: MyString
+
+two:
+  musical_group: MyString
+  member: MyString
+  lista: MyString
+  estilo: MyString
