@@ -1,4 +1,8 @@
 class UsersController < ApplicationController
+  def add_group
+    @user = User.find(params[:id])
+  end
+
   # GET /users
   # GET /users.json
   def index
