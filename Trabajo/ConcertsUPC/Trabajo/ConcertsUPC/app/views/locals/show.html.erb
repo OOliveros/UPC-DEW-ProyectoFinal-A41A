@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nombre local:</b>
+  <%= @local.name %>
+</p>
+
+<p>
+  <b>Dirección:</b>
+  <%= @local.address %>
+</p>
+
+<p>
+  <b>Distrito:</b>
+  <%= @local.zona %>
+</p>
+
+<p>
+  <b>Direccion Google Maps:</b>
+	<%= gmaps4rails(@json) %>
+</p>
+
+
+<%= link_to 'Editar', edit_local_path(@local) %> |
+<%= link_to 'Regresar', locals_path %>
