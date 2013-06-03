@@ -15,6 +15,13 @@ ConcertsUPC::Application.routes.draw do
   resources :groups
   resources :register_groups
   resources :users
+  
+  resources :users do
+    member do
+      get "add_group"
+    end
+  end  
+
 
 
   # The priority is based upon order of creation:
