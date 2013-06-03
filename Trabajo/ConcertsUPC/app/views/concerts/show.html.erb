@@ -2,29 +2,29 @@
 
 <p>
   <b>Local:</b>
-  <%= @concert.local %>
+  <%= @concert.local.name %>
 </p>
 
 <p>
-  <b>Group:</b>
-  <%= @concert.group %>
+  <b>Grupo Musical:</b>
+  <%= @concert.group.name %>
 </p>
 
 <p>
-  <b>Dateconcert:</b>
-  <%= @concert.dateconcert %>
+  <b>Fecha Presentación:</b>
+  <%= l @concert.dateconcert, :format => :default %>
 </p>
 
 <p>
-  <b>Hourstart:</b>
-  <%= @concert.hourstart %>
+  <b>Hora de Inicio:</b>
+  <%= l @concert.hourstart, :format => :default %>
 </p>
 
 <p>
-  <b>Hourend:</b>
-  <%= @concert.hourend %>
+  <b>Hora de Termino:</b>
+  <%= l @concert.hourend, :format => :default %>
 </p>
 
 
-<%= link_to 'Edit', edit_concert_path(@concert) %> |
-<%= link_to 'Back', concerts_path %>
+<%= link_to 'Editar', edit_concert_path(@concert) %> |
+<%= link_to 'Regresar', concerts_path %>

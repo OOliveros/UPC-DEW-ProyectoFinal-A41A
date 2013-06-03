@@ -13,14 +13,14 @@
 
   <div class="field">
     <%= f.label :Local %><br />
-    <%= f.text_field :local %>
+    <%= f.collection_select :local_id, Local.all, :id, :name, :prompt => 'Seleccione un local' %>
   </div>
   <div class="field">
-    <%= f.label :Grupo %><br />
-    <%= f.text_field :group %>
+    <%= f.label :Grupo_Musical %><br />
+    <%= f.collection_select :group_id, Group.all, :id, :name, :prompt => 'Seleccione un grupo' %>
   </div>
   <div class="field">
-    <%= f.label :Fecha %><br />
+    <%= f.label :Fecha_Presentacion %><br />
     <%= f.date_select :dateconcert %>
   </div>
   <div class="field">
@@ -28,10 +28,10 @@
     <%= f.time_select :hourstart %>
   </div>
   <div class="field">
-    <%= f.label :Hora_Termono %><br />
+    <%= f.label :Hora_Termino %><br />
     <%= f.time_select :hourend %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :Registrar %>
   </div>
 <% end %>
