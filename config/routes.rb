@@ -1,20 +1,23 @@
 ConcertsUPC::Application.routes.draw do
   resources :user_concerts
-
-
-  resources :concerts
-
-
   resources :user_groups
 
+   resources :users do
+    member do
+      get "add_group"
+    end
+    member do
+      get "add_concert"
+    end
+  
+  end  
 
+  resources :concerts
   resources :groups
-
-
   resources :locals
   resources :groups
-  resources :register_groups
   resources :users
+
 
 
   # The priority is based upon order of creation:

@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>Nombre</th>
     <th>Local</th>
     <th>Grupo Musical</th>
     <th>Fecha Presentación</th>
@@ -14,6 +15,7 @@
 
 <% @concerts.each do |concert| %>
   <tr>
+    <td><%= concert.name %></td>
     <td><%= concert.local.name %></td>
     <td><%= concert.group.name %></td>
     <td><%= l concert.dateconcert, :format => :default %></td>
