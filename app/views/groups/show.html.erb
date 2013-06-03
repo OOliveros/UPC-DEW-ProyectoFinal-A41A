@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Genm:</b>
-  <%= @group.genm %>
-</p>
-
-<p>
-  <b>Name:</b>
+  <b>Nombre Grupo Musical:</b>
   <%= @group.name %>
 </p>
 
+<p>
+  <b>Estilo:</b>
+  <%= @group.genre %>
+</p>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+
+<%= link_to 'Editar', edit_group_path(@group) %> |
+<%= link_to 'Regresar', groups_path %>

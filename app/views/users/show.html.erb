@@ -1,60 +1,45 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Typeuser:</b>
-  <%= @user.typeuser %>
+  <b>Tipo de persona:</b>
+  <%= @user.typeuser = 1 ? 'Alumno' : 'Usuario' %>
 </p>
 
 <p>
-  <b>Name:</b>
+  <b>Nombres:</b>
   <%= @user.name %>
 </p>
 
 <p>
-  <b>Lastname:</b>
+  <b>Apellido paterno:</b>
   <%= @user.lastname %>
 </p>
 
 <p>
-  <b>Secondlastname:</b>
+  <b>Apellido materno:</b>
   <%= @user.secondlastname %>
 </p>
 
 <p>
-  <b>Sex:</b>
-  <%= @user.sex %>
+  <b>Sexo:</b>
+  <%= @user.sex = 1 ? 'Masculino' : 'Femenino' %>
 </p>
 
 <p>
-  <b>Typedocument:</b>
-  <%= @user.typedocument %>
+  <b>Tipo de documento:</b>
+  <%= @user.typedocument = 1 ? 'DNI' : 'TIU' %>
 </p>
 
 <p>
-  <b>Document:</b>
+  <b>Documento:</b>
   <%= @user.document %>
 </p>
 
 <p>
-  <b>Email:</b>
+  <b>Correo electronico:</b>
   <%= @user.email %>
 </p>
 
-<p>
-  <b>Password:</b>
-  <%= @user.password %>
-</p>
-
-<p>
-  <b>Email confirmation:</b>
-  <%= @user.email_confirmation %>
-</p>
-
-<p>
-  <b>Password confirmation:</b>
-  <%= @user.password_confirmation %>
-</p>
-
-<%= link_to 'Add_book', add_group_user_path(@user) %> |
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Agregar a Grupo', add_group_user_path(@user) %> |
+<%= link_to 'Editar', edit_user_path(@user) %> |
+<%= link_to 'Regresar', users_path %>

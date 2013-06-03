@@ -2,8 +2,13 @@
 
 <%= simple_form_for(@user) do |f| %>
  
-    <%= f.association :concerts, :as => "check_boxes" %>
-    
-    <%= f.button :submit %>
+    <%= f.association :concerts, label: 'Conciertos : ', :as => "check_boxes" %>
+
+<br />
+<br />
+    <%= f.submit 'Registrar' %>
   
 <% end %>
+<br />
+<br />
+<%= link_to 'Regresar', users_path %>
