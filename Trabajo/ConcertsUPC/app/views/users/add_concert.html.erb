@@ -1,0 +1,14 @@
+<h2>Asistencia de Concierto</h2>
+
+<%= simple_form_for(@user) do |f| %>
+ 
+    <%= f.association :concerts, label: 'Conciertos : ', :as => "check_boxes" %>
+
+<br />
+<br />
+    <%= f.submit 'Registrar' %>
+  
+<% end %>
+<br />
+<br />
+<%= link_to 'Regresar', users_path %>

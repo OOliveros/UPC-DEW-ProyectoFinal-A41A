@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
-  attr_accessible :document, :email, :email_confirmation, :lastname, :name, :password, :password_confirmation, :secondlastname, :sex, :typedocument, :typeuser, :group_id
+  attr_accessible :document, :email, :email_confirmation, :lastname, :name, :password, :password_confirmation, :secondlastname, :sex, :typedocument, :typeuser, :group_ids, :concert_ids
   has_many :user_group
-  has_many :group, :through => :user_group
+  has_many :user_concert  
+  has_many :groups, :through => :user_group
+  has_many :concerts, :through => :user_concert
   validates  :typeuser, :presence =>{:message => "Seleccione un tipo de usuario"}
   validates  :name, :presence => {:message => "Nombre no puede estar en blanco"}
   validates  :lastname, :presence => {:message => "Apellido paterno no puede estar en blanco"}

@@ -1,18 +1,16 @@
-<h1>Listing users</h1>
+<h1>Listar Usuario</h1>
 
 <table>
   <tr>
-    <th>Typeuser</th>
-    <th>Name</th>
-    <th>Lastname</th>
-    <th>Secondlastname</th>
-    <th>Sex</th>
-    <th>Typedocument</th>
-    <th>Document</th>
-    <th>Email</th>
-    <th>Password</th>
-    <th>Email confirmation</th>
-    <th>Password confirmation</th>
+    <th>Tipo de persona</th>
+    <th>Nombre</th>
+    <th>Apellido paterno</th>
+    <th>Apellido materno</th>
+    <th>Sexo</th>
+    <th>Tipo documento</th>
+    <th>Documento</th>
+    <th>Dirección de correo electrónico</th>
+    <th></th>
     <th></th>
     <th></th>
     <th></th>
@@ -20,24 +18,22 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.typeuser %></td>
+    <td><%= user.typeuser = 1 ? 'Alumno' : 'Usuario' %></td>
     <td><%= user.name %></td>
     <td><%= user.lastname %></td>
     <td><%= user.secondlastname %></td>
-    <td><%= user.sex %></td>
-    <td><%= user.typedocument %></td>
+    <td><%= user.sex = 1 ? 'Masculino' : 'Femenino' %></td>
+    <td><%= user.typedocument = 1 ? 'DNI' : 'TIU' %></td>
     <td><%= user.document %></td>
     <td><%= user.email %></td>
-    <td><%= user.password %></td>
-    <td><%= user.email_confirmation %></td>
-    <td><%= user.password_confirmation %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Visualizar', user %></td>
+    <td><%= link_to 'Editar', edit_user_path(user) %></td>
+    <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
+    <td><%= link_to 'Asistencia Concierto', add_concert_user_path(user) %></td> 
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path %>
+<%= link_to 'Nuevo Usuario', new_user_path %>

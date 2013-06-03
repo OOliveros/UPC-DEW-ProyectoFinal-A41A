@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def add_group
     @user = User.find(params[:id])
+  end 
+
+  def add_concert
+    @user = User.find(params[:id])
   end
 
   # GET /users

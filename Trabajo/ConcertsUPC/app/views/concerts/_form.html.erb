@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :Nombre %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
     <%= f.label :Local %><br />
     <%= f.collection_select :local_id, Local.all, :id, :name, :prompt => 'Seleccione un local' %>
   </div>

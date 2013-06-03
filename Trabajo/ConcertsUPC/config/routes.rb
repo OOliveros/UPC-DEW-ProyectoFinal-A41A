@@ -1,26 +1,22 @@
 ConcertsUPC::Application.routes.draw do
   resources :user_concerts
-
-
-  resources :concerts
-
-
   resources :user_groups
 
-
-  resources :groups
-
-
-  resources :locals
-  resources :groups
-  resources :register_groups
-  resources :users
-  
-  resources :users do
+   resources :users do
     member do
       get "add_group"
     end
+    member do
+      get "add_concert"
+    end
+  
   end  
+
+  resources :concerts
+  resources :groups
+  resources :locals
+  resources :groups
+  resources :users
 
 
 
