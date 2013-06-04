@@ -1,0 +1,35 @@
+<h1>Listar Conciertos</h1>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Local</th>
+    <th>Grupo Musical</th>
+    <th>Fecha Presentación</th>
+    <th>Hora Inicio</th>
+    <th>Hora Termino</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @concerts.each do |concert| %>
+  <tr>
+    <td><%= concert.name %></td>
+    <td><%= concert.local.name %></td>
+    <td><%= concert.group.name %></td>
+    <td><%= l concert.dateconcert, :format => :default %></td>
+    <td><%= l concert.hourstart, :format => :default  %></td>
+    <td><%= l concert.hourend, :format => :default  %></td>
+    <td><%= link_to 'Visualizar', concert %></td>
+    <td><%= link_to 'Editar', edit_concert_path(concert) %></td>
+    <td><%= link_to 'Eliminar', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nuevo Concierto', new_concert_path %>
+<%= link_to 'Regersar', users_path %>
+

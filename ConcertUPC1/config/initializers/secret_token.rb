@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-ConcertUPC1::Application.config.secret_token = 'a874b63a7a73aa810779ea85a723120a96834a20dc0a04db1502a59d4a50ce95ed9e91ad27066bbcbbde9497c6ce0460ff183462013ac645db498cbc7af8977d'
+ConcertsUPC::Application.config.secret_token = 'c7eb24c65177960c4e3b459dedb6819b40d4ae7c2275085441ae10bd1bfdefe2b4c4795410abcf3e2a68325380f56bdfe71bc9f080c3cb309148290176798a7f'

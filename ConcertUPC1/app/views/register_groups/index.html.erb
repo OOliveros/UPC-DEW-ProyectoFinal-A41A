@@ -1,0 +1,29 @@
+<h1>Listing register_groups</h1>
+
+<table>
+  <tr>
+    <th>Musical group</th>
+    <th>Member</th>
+    <th>Lista</th>
+    <th>Estilo</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @register_groups.each do |register_group| %>
+  <tr>
+    <td><%= register_group.musical_group %></td>
+    <td><%= register_group.member %></td>
+    <td><%= register_group.lista %></td>
+    <td><%= register_group.estilo %></td>
+    <td><%= link_to 'Show', register_group %></td>
+    <td><%= link_to 'Edit', edit_register_group_path(register_group) %></td>
+    <td><%= link_to 'Destroy', register_group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Register group', new_register_group_path %>

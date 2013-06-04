@@ -1,4 +1,26 @@
-ConcertUPC1::Application.routes.draw do
+ConcertsUPC::Application.routes.draw do
+  root :to => "users#index"
+  resources :user_concerts
+  resources :user_groups
+
+   resources :users do
+    member do
+      get "add_group"
+    end
+    member do
+      get "add_concert"
+    end
+  
+  end  
+
+  resources :concerts
+  resources :groups
+  resources :locals
+  resources :groups
+  resources :users
+
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

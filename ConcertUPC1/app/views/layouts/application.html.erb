@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ConcertUPC1</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <title>ConcertsUPC</title>
+  <%= stylesheet_link_tag    "style", :media => "all" %>
+  <%= stylesheet_link_tag 'style' %>
+  <%= javascript_include_tag "common" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>
+<%= yield :scripts %> 
 
 </body>
 </html>

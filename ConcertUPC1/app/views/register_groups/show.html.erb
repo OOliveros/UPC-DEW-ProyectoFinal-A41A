@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Musical group:</b>
+  <%= @register_group.musical_group %>
+</p>
+
+<p>
+  <b>Member:</b>
+  <%= @register_group.member %>
+</p>
+
+<p>
+  <b>Lista:</b>
+  <%= @register_group.lista %>
+</p>
+
+<p>
+  <b>Estilo:</b>
+  <%= @register_group.estilo %>
+</p>
+
+
+<%= link_to 'Edit', edit_register_group_path(@register_group) %> |
+<%= link_to 'Back', register_groups_path %>
