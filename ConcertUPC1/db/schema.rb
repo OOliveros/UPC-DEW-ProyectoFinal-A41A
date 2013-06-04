@@ -43,6 +43,15 @@ ActiveRecord::Schema.define(:version => 20130603045448) do
     t.boolean  "gmaps"
   end
 
+  create_table "register_groups", :force => true do |t|
+    t.string   "musical_group"
+    t.string   "member"
+    t.string   "lista"
+    t.string   "estilo"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
   create_table "user_concerts", :force => true do |t|
     t.integer  "user_id"
     t.integer  "concert_id"
