@@ -17,9 +17,9 @@
   </div>
   <div class="field">
     <%= f.label :Estilo %><br />
-    <%= f.text_field :genre %>
+       <%= f.select :genre, ['Rock','Salsa','Metal','Balada','Punk' ], :prompt => 'Selecciona uno' %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :Registrar %>
   </div>
 <% end %>

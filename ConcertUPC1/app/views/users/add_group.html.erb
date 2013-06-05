@@ -1,8 +1,17 @@
-<h2>Bienvenido <%= @user.name %></h2>
+<br />
+<br />
+
+<h2>Registrase a Grupo Musical</h2>
 
 <%= simple_form_for(@user) do |f| %>
  
-    <%= f.association :groups, :as => "check_boxes" %>
-    <%= f.button :submit %>
+    <%= f.association :groups, label: 'Grupo Musical : ', :as => "check_boxes" %>
+    <br />
+<br />
+
+    <%= f.submit 'Registrar' %>
   
 <% end %>
+<br />
+<br />
+<%= link_to 'Regresar', users_path %>

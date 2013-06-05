@@ -1,4 +1,13 @@
-<h1>Listar Usuario</h1>
+
+<%= link_to 'Registar Usuario', new_user_path %>
+<%= link_to 'Registrar Local', locals_path %>
+<%= link_to 'Registrar Grupo', groups_path %>
+<%= link_to 'Registrar Concierto', concerts_path %>
+
+<br />
+<br />
+
+<h3>Listar Usuario</h3>
 
 <table>
   <tr>
@@ -33,10 +42,5 @@
 
 <br />
 
-<%= link_to 'Registar Usuario', new_user_path %>
-<%= link_to 'Registrar Local', locals_path %>
-<%= link_to 'Registrar Grupo', groups_path %>
-<%= link_to 'Registrar Concierto', concerts_path %>
-<%= link_to 'Registrar Asistencia Concierto', add_concert_user_path(user) %>
 
 <% end %>
