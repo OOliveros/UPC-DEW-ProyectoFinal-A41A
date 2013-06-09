@@ -2,16 +2,106 @@
 <html>
 <head>
   <title>ConcertsUPC</title>
+    <meta name="description" content="website description" />
+  <meta name="keywords" content="website keywords, website keywords" />
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+
   <%= stylesheet_link_tag    "style", :media => "all" %>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  
   <%= stylesheet_link_tag 'style' %>
+    <%= stylesheet_link_tag 'dark' %>
+  
+  
    <%= stylesheet_link_tag 'gmaps4rails' %> 
   <%= javascript_include_tag "common" %>
    <%= javascript_include_tag "application" %>
+   
+  <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+   
+   
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="main">
 
+    <!-- begin header -->
+	
+	
+	
+    <header>
+      <div id="logo"><h1>Registra<a href="#">Tus</a>CONCIERTOS</h1></div>
+      <nav>
+        <ul class="sf-menu" id="nav">
+		<br>
+		<br>
+		<br>
+		
+		
+          <li class="selected"><a href="#">Usuario</a>
+            <ul>
+              <li><%= link_to 'Registrar', new_user_path %></li>
+            </ul>
+			
+			<li class="selected"><a href="#">Local</a>
+            <ul>
+              <li><%= link_to 'Registrar', locals_path %></li>
+            </ul>
+		
+		<li class="selected"><a href="#">Grupo</a>
+            <ul>
+              <li><%= link_to 'Registrar', groups_path %></li>
+            </ul>
+		
+		
+		   <li class="selected"><a href="#">Concierto</a>
+            <ul>
+              <li><%= link_to 'Registrar', concerts_path %></li>
+            </ul>
+
+      </nav>
+    </header>
+    <!-- end header -->
+			<br>
+		<br>
+		<br>
+
+    <!-- begin content -->
+	
+			<br>
+		<br>
+		<br>
+				<br>
+		<br>
+		<br>
+    <div id="site_content">
+      <ul class="slideshow">
+        <li class="show"><img width="950" height="450" src="/assets/home_1.jpg" alt="&quot;You can put a caption for your image right here&quot;" /></li>
+        <li><img width="950" height="450" src="/assets/home_2.jpg" alt="&quot;You can put a description of the image here if you like, or anything else if you want.&quot;" /></li>
+        <li><img width="950" height="450" src="/assets/home_3.jpg" alt="&quot;You can put a description of the image here if you like, or anything else if you want.&quot;" /></li>
+      </ul>
+    </div>
+    <!-- end content -->
+
+    <!-- begin footer -->
+    <footer>
+      <p>Copyright &copy; 2013 PhotoArtWork. All Rights Reserved. <a href="http://www.heartinternet.co.uk/vps/linux-vps.html">Linux VPS</a>. <a href="http://www.css3templates.co.uk">Design from css3templates.co.uk</a>.</p>
+      <p><img src="/assets/twitter.png" alt="twitter" />&nbsp;<img src="/assets/facebook.png" alt="facebook" />&nbsp;<img src="/assets/rss.png" alt="rss" /></p>
+    </footer>
+    <!-- end footer -->
+
+  </div>
+  <!-- javascript at the bottom for fast page loading -->
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+  <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+  <script type="text/javascript" src="js/image_fade.js"></script>
+  <!-- initialise sooperfish menu -->
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('ul.sf-menu').sooperfish();
+    });
+  </script>
 <%= yield %>
 <%= yield :scripts %> 
 
