@@ -1,5 +1,9 @@
 ConcertsUPC::Application.routes.draw do
-  root :to => "users#index"
+  get "user_sessions/new"
+  get "user_sessions/create"
+  get "user_sessions/destroy"
+
+  root :to => "static#index"
   resources :user_concerts
   resources :user_groups
 
@@ -17,8 +21,13 @@ ConcertsUPC::Application.routes.draw do
   resources :groups
   resources :locals
   resources :groups
+  resources :user_sessions
   resources :users
 
+  match 'login' => 'user_sessions#new', :as => :login
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+  match 'home', :to => "static#index", :as => :home
+   
 
 
   # The priority is based upon order of creation:

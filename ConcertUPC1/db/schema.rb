@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20130603045448) do
   end
 
   create_table "users", :force => true do |t|
+    t.string   "username",         :null => false
     t.integer  "typeuser"
     t.string   "name"
     t.string   "lastname"
@@ -75,11 +76,10 @@ ActiveRecord::Schema.define(:version => 20130603045448) do
     t.integer  "typedocument"
     t.string   "document"
     t.string   "email"
-    t.string   "password"
-    t.string   "email_confirmation"
-    t.string   "password_confirmation"
-    t.datetime "created_at",            :null => false
-    t.datetime "updated_at",            :null => false
+    t.string   "crypted_password"
+    t.string   "salt"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
 end

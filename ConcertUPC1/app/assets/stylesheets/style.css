@@ -10,8 +10,18 @@
     src: local("News Cycle"), url('/assets/NewsCycle-Regular.ttf'); 
 } 
 
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td {
+border:0;
+outline:0;
+vertical-align:baseline;
+background:transparent;
+font-size:100%;
+margin:0;
+padding:0;
+}
+
 html { 
-  height: 100%;}
+font-size:100%;}
 
 * { 
   margin: 0; 
@@ -21,8 +31,11 @@ html {
 article, aside, figure, footer, header, hgroup, nav, section { 
   display:block;}
 
-body { 
-  font: normal .80em arial, sans-serif;}
+body {
+line-height:1;
+font:1em/1.5 Arimo, Helvetica, Arial, Sans-serif;
+color:#383838;
+}
 
 p { 
   padding: 0 0 25px 0;
@@ -88,7 +101,7 @@ header {
   height: 105px;}
 
 #logo { 
-  width: 250px;
+  width: 550px;
   float: left;
   height: 100px;
   background: transparent;
@@ -100,6 +113,40 @@ header {
 
 #logo h1 a:hover { 
   text-decoration: none;}
+
+.row,.row-slide {
+width:960px;
+margin:0 auto;
+}
+
+.row .row,.row-slide .row {
+width:auto;
+display:inline-block;
+margin:1px -10px 0;
+}
+
+.row:after,#featured .slider:after,#content-home .group-slide:after,#sidebar #widget-post li:after,ul.wpsc-latest-product:after,
+#footer #widget-post li:after {
+content:"";
+display:block;
+height:0;
+clear:both;
+visibility:hidden;
+}
+
+ul#log-bar {
+float:right;
+height:30px;
+padding:0 0 0 10px;
+}
+
+ul#log-bar a {
+color:#fff;
+text-decoration:none;
+display:block;
+float:left;
+padding:0 10px;
+}
 
 #site_content { 
   width: 950px;
@@ -341,6 +388,16 @@ nav {
   float: right;
   padding: 35px 0 0 0;} 
   
+nav#topnav {
+font-weight:700;
+font-size:12px;
+z-index:70;
+width:960px;
+height:32px;
+line-height:32px;
+position:relative;
+}
+
 ul#nav { 
   float: right;
   margin: 25px 10px 0 0;}
@@ -361,3 +418,17 @@ ul#nav li a {
 ul#nav ul { 
   margin-top: 40px;
   padding-bottom: 10px;}
+
+.nav-wrapper {
+background: #000000;
+background: -moz-linear-gradient(top, #000000 0%, #383838 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#000000), color-stop(100%,#383838));
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#383838',GradientType=0 );
+height:32px;
+border-bottom:solid 2px #333;
+}
+
+ul.inline-navbar {
+display:inline;
+font-weight:700;
+}

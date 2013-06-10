@@ -1,6 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
+  username:MyString
   typeuser: 1
   name: MyString
   lastname: MyString
@@ -10,10 +11,9 @@ one:
   document: MyString
   email: MyString
   password: MyString
-  email_confirmation: MyString
-  password_confirmation: MyString
-
+ 
 two:
+  username:MyString
   typeuser: 1
   name: MyString
   lastname: MyString
@@ -23,5 +23,4 @@ two:
   document: MyString
   email: MyString
   password: MyString
-  email_confirmation: MyString
-  password_confirmation: MyString
+ 

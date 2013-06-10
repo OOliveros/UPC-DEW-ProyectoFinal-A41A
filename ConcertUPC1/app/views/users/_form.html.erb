@@ -12,6 +12,10 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :Nombre_usuario %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
     <%= f.label :Tipo_de_persona %><br />
     <%= f.select(:typeuser, [['Alumno', 1], ['Usuario', 2]],:prompt => true) %>
   </div>
