@@ -2,7 +2,7 @@
 
 <p>
   <b>Tipo de persona:</b>
-  <%= @user.typeuser = 1 ? 'Alumno' : 'Usuario' %>
+  <%= @user.typeuser == 1 ? 'Alumno' : 'Usuario' %>
 </p>
 
 <p>
@@ -40,7 +40,16 @@
   <%= @user.email %>
 </p>
 
+  <p>
+  <b>Rol:</b>
+  <%= @user.rol > 1 ? 'Usuario' : 'Administrador' %>
+</p>
+
 <%= link_to 'Asistir a Concierto', add_concert_user_path(@user) %>
 <%= link_to 'Agregar a Grupo', add_group_user_path(@user) %> |
 <%= link_to 'Editar', edit_user_path(@user) %> |
+<% if  current_user.rol == 1 %>
 <%= link_to 'Regresar', users_path %>
+<% else %>
+<%= link_to 'Regresar', home_path %>
+<% end %>

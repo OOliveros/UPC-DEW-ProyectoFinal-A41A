@@ -1,6 +1,76 @@
 <h1>Editar Usuario</h1>
 
-<%= render 'form' %>
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> registrar usuario:</h2>
 
-<%= link_to 'Visualizar', @user %> |
-<%= link_to 'Regresar', users_path %>
+      <ul>
+        <% @user.errors.each_with_index do |msg, i| %>
+        <li><%= msg[1] %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Nombre_usuario %><br />
+    <%= f.text_field :username %>
+  </div>
+  <div class="field">
+    <%= f.label :Tipo_de_persona %><br />
+    <%= f.select(:typeuser, [['Alumno', 1], ['Usuario', 2]],:prompt => true) %>
+  </div>
+  <div class="field">
+    <%= f.label :Nombre %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Apellido_paterno %><br />
+    <%= f.text_field :lastname %>
+  </div>
+  <div class="field">
+    <%= f.label :Apellido_materno %><br />
+    <%= f.text_field :secondlastname %>
+  </div>
+  <div class="field">
+    <%= f.label :Sexo %><br />
+     <%= f.select(:sex, [['Masculino', 1], ['Femenino', 2]],:prompt => true) %>
+  </div>
+  </div>
+  <div class="field">
+    <%= f.label :Tipo_de_documento %><br />
+    <%= f.select(:typedocument, [['DNI', 1], ['TIU', 2]],:prompt => true) %>
+  </div>
+  <div class="field">
+    <%= f.label :Documento %><br />
+    <%= f.text_field :document %>
+  </div>
+  <div class="field">
+    <%= f.label :Dirección_de_correo_electrónico %><br />
+    <%= f.text_field :email %>
+  </div>
+    <div class="field">
+    <%= f.label :Vuelve_a_escribir_dirección_de_correo_electrónico %><br />
+    <%= f.text_field :email_confirmation %>
+  </div>
+  <div class="field">
+    <%= f.label :Crea_una_contraseña %><br />
+    <%= f.password_field :password %>
+  </div>  
+   <div class="field">
+    <%= f.label :Vuelve_a_escribir_la_contraseña %><br />
+    <%= f.password_field :password_confirmation %>
+  </div> 
+  <% if  @user.rol < 2 %>
+     <div class="field">
+      <%= f.label :Rol %><br />
+     <%= f.select(:rol, [['Administrador', 1], ['usuario', 2]],:prompt => true) %>
+     </div> 
+  <% end %>
+  <div class="actions">
+    <%= f.submit :Registrar %>
+  </div>
+<% end %>
+
+<%= link_to 'Regresar', @user %>

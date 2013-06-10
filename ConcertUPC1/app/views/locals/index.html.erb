@@ -19,14 +19,14 @@
     <td><%= local.zona %></td>    
     <td><%= local.phone %></td>
     <td><%= link_to 'Visualizar', local %></td>
+    <% if current_user.rol < 2 %>
     <td><%= link_to 'Editar', edit_local_path(local) %></td>
     <td><%= link_to 'Eliminar', local, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'Nuevo Local', new_local_path %>
-<%= link_to 'Regresar', users_path %>
+<%= link_to 'Regresar', home_path %>
 

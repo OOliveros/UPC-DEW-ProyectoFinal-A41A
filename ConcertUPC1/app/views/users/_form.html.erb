@@ -60,6 +60,9 @@
     <%= f.label :Vuelve_a_escribir_la_contraseña %><br />
     <%= f.password_field :password_confirmation %>
   </div> 
+    <%= f.label :Rol %><br />
+    <%= f.text_field :rol, :value => "2",:readonly => true %>
+
   <div class="actions">
     <%= f.submit :Registrar %>
   </div>

@@ -1,9 +1,4 @@
 
-<%= link_to 'Registar Usuario', new_user_path %>
-<%= link_to 'Registrar Local', locals_path %>
-<%= link_to 'Registrar Grupo', groups_path %>
-<%= link_to 'Registrar Concierto', concerts_path %>
-
 <br />
 <br />
 
@@ -36,11 +31,14 @@
     <td><%= user.email %></td>
     <td><%= link_to 'Visualizar', user %></td>
     <td><%= link_to 'Editar', edit_user_path(user) %></td>
-    <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
+    <td><%= button_to 'Eliminar', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>    
   </tr>
 </table>
 
 <br />
-
-
 <% end %>
+<br />
+<br />
+<br />
+
+<%= link_to 'Regresar', home_path %>

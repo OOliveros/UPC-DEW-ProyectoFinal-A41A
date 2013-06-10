@@ -9,22 +9,33 @@
     <br>
     <% if current_user %>
 
-    <li class="selected"><a href="#">Usuarios</a>
+    <li class="selected"><a href="#">Usuario</a>
+    <% if current_user.rol < 2 %>
+ 
       <ul>
-        <li><%= link_to 'Listado', users_path %></li>
+        <li><%= link_to 'Listar', users_path %></li>
       </ul>
-       
-    <li class="selected"><a href="#">Locales</a>
+     <% else %>
       <ul>
-        <li><%= link_to 'Nuevo', new_local_path %></li>
+        <li><%= link_to 'Editar', current_user %></li>
       </ul>
-      <br>
-      <br>      
+      
+    <% end %>
+
+    <li class="selected"><a href="#">Local</a>
+      <% if current_user.rol < 2 %>
+       <ul>
+         <li><%= link_to 'Nuevo', new_local_path %></li>
+       </ul>
+       <br>
+       <br>      
+      <% end %>
+      
       <ul>
-        <li><%= link_to 'Listado', locals_path %></li>
+        <li><%= link_to 'Listar', locals_path %></li>
       </ul>
     
-    <li class="selected"><a href="#">Grupos</a>
+    <li class="selected"><a href="#">Grupo</a>
       <ul>
         <li><%= link_to 'Nuevo', new_group_path %></li>
       </ul>
@@ -34,7 +45,7 @@
         <li><%= link_to 'Listado', groups_path %></li>
       </ul>
 
-    <li class="selected"><a href="#">Conciertos</a>
+    <li class="selected"><a href="#">Concierto</a>
       <ul>
         <li><%= link_to 'Nuevo', new_concert_path %></li>
       </ul>
