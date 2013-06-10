@@ -21,7 +21,12 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @user = User.find(params[:id])
+   if params[:id].nil? # if there is no user id in params, show current one
+    @user = current_user
+  else # if there is the user id in params just use it, 
+     # maybe get 'authorization failed'
+    @user = User.find params[:id]
+  end
 
     respond_to do |format|
       format.html # show.html.erb
