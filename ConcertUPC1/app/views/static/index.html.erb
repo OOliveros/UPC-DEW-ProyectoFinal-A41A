@@ -1,50 +1,83 @@
   
     <!-- begin header -->    
 
-<div class="nav-wrapper">
-      <nav id="topnav" class="row">
-      <ul id="logo-bar">  
-        <% if current_user %>
-          <li class="selected"><a href="#">Usuario</a>
-            <ul>
-              <li><%= link_to 'Registrar', new_user_path %></li>
-            </ul>
-          <li class="selected"><a href="#">Local</a>
-            <ul>
-              <li><%= link_to 'Registrar', locals_path %></li>
-            </ul>
-          <li class="selected"><a href="#">Grupo</a>
-            <ul>
-              <li><%= link_to 'Registrar', groups_path %></li>
-            </ul>
-          <li class="selected"><a href="#">Concierto</a>
-            <ul>
-              <li><%= link_to 'Registrar', concerts_path %></li>
-            </ul>
-            <%= link_to "Logout", :logout %>
-        <% else %>
-            <%= link_to "Register", new_user_path %> |
-            <%= link_to "Login", :login %>
-        <% end %>
+    <header>
+    <div id="logo"><h1>Conciertos <a href="#">UPC </a> - Peru</h1></div>
+    <nav>
+        <ul class="sf-menu" id="nav">
+    <br>
+    <br>
+    <% if current_user %>
+
+    <li class="selected"><a href="#">Usuarios</a>
+      <ul>
+        <li><%= link_to 'Listado', users_path %></li>
       </ul>
-      <ul id="site-nav" class="">
-         <li class="menu-item"><a href="#">Home</a>
-          <li id="menu-item-16" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-16"><a href="#">Products Page</a>
-         <ul class="sub-menu">
-          <li id="menu-item-15" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-15"><a href="#">Checkout</a></li>
-        </ul>
-          </li>
-                                    </ul>
+       
+    <li class="selected"><a href="#">Locales</a>
+      <ul>
+        <li><%= link_to 'Nuevo', new_local_path %></li>
+      </ul>
+      <br>
+      <br>      
+      <ul>
+        <li><%= link_to 'Listado', locals_path %></li>
+      </ul>
+    
+    <li class="selected"><a href="#">Grupos</a>
+      <ul>
+        <li><%= link_to 'Nuevo', new_group_path %></li>
+      </ul>
+      <br>
+      <br>
+      <ul>
+        <li><%= link_to 'Listado', groups_path %></li>
+      </ul>
+
+    <li class="selected"><a href="#">Conciertos</a>
+      <ul>
+        <li><%= link_to 'Nuevo', new_concert_path %></li>
+      </ul>
+      <br>
+      <br>
+      <ul>
+        <li><%= link_to 'Listado', concerts_path %></li>
+      </ul>
+
+    <li class="selected"><a href="#">Salir</a>
+      <ul>
+        <li><%= link_to "Desloguearse", :logout %></li>
+      </ul>
+      
+    
+    <% else %>
+      <li><%= link_to "Registrate", new_user_path %></li>
+      <li><%= link_to "Ingresa", :login %></li>
+    <% end %>
+
+      </ul>
     </nav>
-   </div>   
-    <!-- end header -->
+    </header>
+
+   <!-- end header -->
+    <br>
+    <br>
+    <br>
+    <br>
     <!-- begin content -->
+  
+      <br>
+    <br>
+    <br>
+        <br>
+    <br>
+    <br>
 
     <div id="site_content">
       <ul class="slideshow">
-        <li class="show"><img width="950" height="450" src="/assets/home_1.jpg" alt="&quot;You can put a caption for your image right here&quot;" /></li>
-        <li><img width="950" height="450" src="/assets/home_2.jpg" alt="&quot;You can put a description of the image here if you like, or anything else if you want.&quot;" /></li>
-        <li><img width="950" height="450" src="/assets/home_3.jpg" alt="&quot;You can put a description of the image here if you like, or anything else if you want.&quot;" /></li>
+        <li class="show"><img width="950" height="450" src="/assets/home_1.jpg" alt="&quot;Si eres alumno unete a un grupo y participa en un concierto.&quot;" /></li>
+        <li><img width="950" height="450" src="/assets/home_2.jpg" alt="&quot;Si no eres alumno inscribete a un concierto y disfruta de la mejor musica.&quot;" /></li>
+        <li><img width="950" height="450" src="/assets/home_3.jpg" alt="&quot;Promovemos la musica dentro y fuera de la UPC.&quot;" /></li>
       </ul>
     </div>
     <!-- end content -->
