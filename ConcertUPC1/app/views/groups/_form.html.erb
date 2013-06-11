@@ -19,6 +19,10 @@
     <%= f.label :Estilo %><br />
        <%= f.select :genre, ['Rock','Salsa','Metal','Balada','Punk' ], :prompt => 'Selecciona uno' %>
   </div>
+  <div class="field">
+    <%= f.label :IDUsuario_Registro %><br />
+    <%= f.text_field :created_user,:value => current_user.id, :readonly => true %>
+  </div>
   <div class="actions">
     <%= f.submit :Registrar %>
   </div>

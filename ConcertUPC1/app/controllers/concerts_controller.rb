@@ -2,8 +2,11 @@ class ConcertsController < ApplicationController
   # GET /concerts
   # GET /concerts.json
   def index
+    if(current_user.rol == 1 or current_user.typeuser == 2)
     @concerts = Concert.all
-
+  else
+     @concerts = Concert.all.find(current_user.id)
+  end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @concerts }

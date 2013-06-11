@@ -1,6 +1,35 @@
 <h1>Editar Grupo Musical</h1>
 
-<%= render 'form' %>
+<%= form_for(@group) do |f| %>
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% @group.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Nombre_Grupo %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Estilo %><br />
+       <%= f.select :genre, ['Rock','Salsa','Metal','Balada','Punk' ], :prompt => 'Selecciona uno' %>
+  </div>
+  <div class="field">
+    <%= f.label :IDUsuario_Registro %><br />
+    <%= f.text_field :created_user, :readonly => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit :Registrar %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Visualizar', @group %> |
 <%= link_to 'Regresar', groups_path %>

@@ -14,14 +14,15 @@
     <td><%= group.name %></td>
     <td><%= group.genre %></td>
     <td><%= link_to 'Visualizar', group %></td>
+    <% if current_user.typeuser == 1 %>
     <td><%= link_to 'Editar', edit_group_path(group) %></td>
     <td><%= link_to 'Eliminar', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%end%>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Nuevo Grupo Musical', new_group_path %>
-<%= link_to 'Regresar', users_path %>
+<%= link_to 'Regresar', home_path %>
 

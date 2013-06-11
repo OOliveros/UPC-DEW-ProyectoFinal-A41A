@@ -10,7 +10,7 @@
     <% if current_user %>
 
     <li class="selected"><a href="#">Usuario</a>
-    <% if current_user.rol < 2 %>
+    <% if current_user.rol == 1 %>
  
       <ul>
         <li><%= link_to 'Listar', users_path %></li>
@@ -23,7 +23,7 @@
     <% end %>
 
     <li class="selected"><a href="#">Local</a>
-      <% if current_user.rol < 2 %>
+      <% if current_user.rol == 1 %>
        <ul>
          <li><%= link_to 'Nuevo', new_local_path %></li>
        </ul>
@@ -36,34 +36,40 @@
       </ul>
     
     <li class="selected"><a href="#">Grupo</a>
+       <% if current_user.typeuser == 1 %>
       <ul>
         <li><%= link_to 'Nuevo', new_group_path %></li>
       </ul>
       <br>
       <br>
+      <%end%>
       <ul>
         <li><%= link_to 'Listado', groups_path %></li>
       </ul>
       <br>
       <br>
+      <% if current_user.typeuser == 1 %>
       <ul>
-        <li><%= link_to 'Unirse', groups_path %></li>
+        <li><%= link_to 'Unirse', add_group_user_path(current_user) %></li>
       </ul>
+      <%end%>
 <!-- add_group_user_path(@user) -->
 
     <li class="selected"><a href="#">Concierto</a>
+       <% if current_user.typeuser == 1 %>
       <ul>
         <li><%= link_to 'Nuevo', new_concert_path %></li>
       </ul>
       <br>
       <br>
+      <%end%>
       <ul>
         <li><%= link_to 'Listado', concerts_path %></li>
       </ul>
        <br>
       <br>
       <ul>
-        <li><%= link_to 'Asistir', concerts_path %></li>
+        <li><%= link_to 'Asistir', add_concert_user_path(current_user) %>
       </ul>
 <!-- add_concert_user_path(@user) -->
 

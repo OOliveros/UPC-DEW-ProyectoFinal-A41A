@@ -22,14 +22,15 @@
     <td><%= l concert.hourstart, :format => :default  %></td>
     <td><%= l concert.hourend, :format => :default  %></td>
     <td><%= link_to 'Visualizar', concert %></td>
+    <% if current_user.typeuser == 1 %>
     <td><%= link_to 'Editar', edit_concert_path(concert) %></td>
     <td><%= link_to 'Eliminar', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <%end%>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'Nuevo Concierto', new_concert_path %>
-<%= link_to 'Regresar', users_path %>
+<%= link_to 'Regresar', home_path %>
 

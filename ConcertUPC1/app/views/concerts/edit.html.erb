@@ -1,6 +1,51 @@
 <h1>Editar Concierto</h1>
 
-<%= render 'form' %>
+<%= form_for(@concert) do |f| %>
+  <% if @concert.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@concert.errors.count, "error") %> prohibited this concert from being saved:</h2>
+
+      <ul>
+      <% @concert.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Nombre %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :Local %><br />
+    <%= f.collection_select :local_id, Local.all, :id, :name, :prompt => 'Seleccione un local' %>
+  </div>
+  <div class="field">
+    <%= f.label :Grupo_Musical %><br />
+    <%= f.collection_select :group_id, Group.all, :id, :name, :prompt => 'Seleccione un grupo' %>
+  </div>
+  <div class="field">
+    <%= f.label :Fecha_Presentacion %><br />
+    <%= f.date_select :dateconcert %>
+  </div>
+  <div class="field">
+    <%= f.label :Hora_inicio %><br />
+    <%= f.time_select :hourstart %>
+  </div>
+  <div class="field">
+    <%= f.label :Hora_Termino %><br />
+    <%= f.time_select :hourend %>
+  </div>
+  <div class="field">
+    <%= f.label :IDUsuario_Registro %><br />
+    <%= f.text_field :created_user, :readonly => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit :Registrar %>
+  </div>
+<% end %>
+
 
 <%= link_to 'Visualizar', @concert %> |
 <%= link_to 'Regresar', concerts_path %>

@@ -35,6 +35,10 @@
     <%= f.label :Hora_Termino %><br />
     <%= f.time_select :hourend %>
   </div>
+  <div class="field">
+    <%= f.label :IDUsuario_Registro %><br />
+    <%= f.text_field :created_user,:value => current_user.id, :readonly => true %>
+  </div>
   <div class="actions">
     <%= f.submit :Registrar %>
   </div>
