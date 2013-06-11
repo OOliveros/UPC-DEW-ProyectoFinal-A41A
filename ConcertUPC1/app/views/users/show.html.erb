@@ -1,5 +1,23 @@
 <p id="notice"><%= notice %></p>
 
+<h1>Informacion del Usuario</h1>
+
+<li class="selected"><a href="#"><%= link_to 'Editar Usuario', edit_user_path(@user) %></a></li>
+    
+<li class="selected">
+  <a href="#">
+    <% if  current_user.rol == 1 %>
+      <%= link_to 'Regresar', users_path %>
+    <% else %>
+      <%= link_to 'Regresar', home_path %>
+    <% end %>
+  </a>
+</li>
+
+    <br>
+  
+
+
 <p>
   <b>Tipo de persona:</b>
   <%= @user.typeuser == 1 ? 'Alumno' : 'Usuario' %>
@@ -44,12 +62,14 @@
   <b>Rol:</b>
   <%= @user.rol > 1 ? 'Usuario' : 'Administrador' %>
 </p>
-
-<%= link_to 'Asistir a Concierto', add_concert_user_path(@user) %>
-<%= link_to 'Agregar a Grupo', add_group_user_path(@user) %> |
-<%= link_to 'Editar', edit_user_path(@user) %> |
-<% if  current_user.rol == 1 %>
-<%= link_to 'Regresar', users_path %>
-<% else %>
-<%= link_to 'Regresar', home_path %>
-<% end %>
+<!-- Comentado -->
+<!--<%= link_to 'Asistir a Concierto', add_concert_user_path(@user) %> -->
+<!--<%= link_to 'Agregar a Grupo', add_group_user_path(@user) %> | -->
+<%= link_to 'Asistir a Concierto', add_concert_user_path(@user) %> |
+<%= link_to 'Agregar a Grupo', add_group_user_path(@user) %> 
+<!-- <%= link_to 'Editar', edit_user_path(@user) %> | -->
+<!--<% if  current_user.rol == 1 %> -->
+<!--<%= link_to 'Regresar', users_path %> -->
+<!--<% else %> -->
+<!--<%= link_to 'Regresar', home_path %> -->
+<!--<% end %> -->
