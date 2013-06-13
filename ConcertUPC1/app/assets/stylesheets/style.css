@@ -432,3 +432,11 @@ ul.inline-navbar {
 display:inline;
 font-weight:700;
 }
+
+.checkbox_container {
+  text-align: left;
+  display: block;
+  vertical-align: -1px;
+  margin: 5px;
+ }
+.

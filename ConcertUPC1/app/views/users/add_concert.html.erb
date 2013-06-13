@@ -3,13 +3,18 @@
 
 <h2>Asistencia de Concierto</h2>
 
-<%= simple_form_for(@user) do |f| %>
+<%= simple_form_for(@user, :url => home_path) do |f| %>
  
-    <%= f.association :concerts, label: 'Conciertos : ', :as => "check_boxes" %>
-
+<table>
+	<tr>
+   	<td>
+        <%= f.association :concerts, :as => :check_boxes, :label_method => lambda{ |concert| "#{concert.name} <table> <tr> <td> Lugar : #{concert.local.name} </td> </tr> <tr> <td> Grupo : #{concert.group.name} </td> </tr><tr> <td> Fecha : #{l concert.dateconcert, :format => :default } </td> </tr> <tr> <td> Hora Inicio : #{l concert.hourstart, :format => :default} </td> </tr><tr> <td> Hora Fin : #{l concert.hourend, :format => :default } </td> </tr></table><br>".html_safe}, :label => "Conciertos : ",:item_wrapper_class => 'checkbox_container'  %>
+      </td>
+	</tr>
+</table>
 <br />
 <br />
-    <%= f.submit 'Registrar' %>
+    <%= f.button :submit, :label => 'Registrar' %>
   
 <% end %>
 <br />

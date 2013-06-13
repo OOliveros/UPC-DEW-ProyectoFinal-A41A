@@ -8,10 +8,12 @@
     <th>Fecha Presentación</th>
     <th>Hora Inicio</th>
     <th>Hora Termino</th>
+    <th>Estado</th>
     <th></th>
     <th></th>
     <th></th>
-  </tr>
+   <th></th>
+   </tr>
 
 <% @concerts.each do |concert| %>
   <tr>
@@ -21,6 +23,8 @@
     <td><%= l concert.dateconcert, :format => :default %></td>
     <td><%= l concert.hourstart, :format => :default  %></td>
     <td><%= l concert.hourend, :format => :default  %></td>
+    <td><%= concert.dateconcert >= DateTime.now ? 'Pendiente' : 'Terminado' %></td>  
+    <td>&nbsp&nbsp&nbsp&nbsp</td>
     <td><%= link_to 'Visualizar', concert %></td>
     <% if current_user.typeuser == 1 %>
     <td><%= link_to 'Editar', edit_concert_path(concert) %></td>

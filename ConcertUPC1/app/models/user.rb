@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :user_group
   has_many :user_concert  
   has_many :groups, :through => :user_group
-  has_many :concerts, :through => :user_concert
+  has_many :concerts, :through => :user_concert, :conditions => ['dateconcert >= ?', DateTime.now]
   validates  :typeuser, :presence =>{:message => "Seleccione un tipo de usuario"}
   validates  :name, :presence => {:message => "Nombre no puede estar en blanco"}
   validates  :lastname, :presence => {:message => "Apellido paterno no puede estar en blanco"}
