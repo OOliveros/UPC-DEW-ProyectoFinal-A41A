@@ -3,11 +3,12 @@
 
 <h2>Registrase a Grupo Musical</h2>
 
-<%= simple_form_for(@user) do |f| %>
+<%= simple_form_for(@user, :url => home_path) do |f| %>
  
-    <%= f.association :groups, label: 'Grupo Musical : ', :as => "check_boxes" %>
+  <%= f.association :groups, :as => :check_boxes, :label_method => lambda{ |group| "#{group.name} <table> <tr> <td> Genero : #{group.genre} </td></tr><tr> <td>  #{ image_tag group.image.url} </td> </tr>  </table><br>".html_safe}, :label => "Grupos : ",:item_wrapper_class => 'checkbox_container'  %>
+
     <br />
-<br />
+	<br />
 
     <%= f.submit 'Registrar' %>
   

@@ -73,4 +73,9 @@
   </div>
 <% end %>
 
-<%= link_to 'Regresar', @user %>
+<% if  current_user.rol == 1 %>
+    <%= link_to 'Regresar', users_path %>
+<% else %>
+    <%= link_to 'Regresar', home_path %>
+<% end %>
+

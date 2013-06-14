@@ -10,4 +10,13 @@
   <%= @group.genre %>
 </p>
 
+<p>
+  <b>Imagen:</b><br/>
+  <% if @group.image? %>
+  <%= image_tag @group.image.url %>
+  <br/>
+  <%= link_to @group.image.url, @group.image.url %>
+  <% end %>
+</p>
+
 <%= link_to 'Regresar', groups_path %>

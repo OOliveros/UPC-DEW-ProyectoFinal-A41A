@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
       if(current_user.rol == 1 or current_user.typeuser == 2)
         @groups = Group.all
       else
-        @groups = Group.all.find(current_user.id)
+        @groups = Group.where(:created_user => current_user.id)
       end 
     respond_to do |format|
       format.html # index.html.erb
