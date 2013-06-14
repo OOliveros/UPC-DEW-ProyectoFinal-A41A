@@ -28,6 +28,10 @@ ConcertsUPC::Application.routes.draw do
   match 'logout' => 'user_sessions#destroy', :as => :logout
   match 'home', :to => "static#index", :as => :home
    
+  resource :oauth do
+    get :callback
+  end
+  match "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
 
 
   # The priority is based upon order of creation:

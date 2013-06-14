@@ -82,6 +82,8 @@
     <% else %>
       <li><%= link_to "Registrate", new_user_path %></li>
       <li><%= link_to "Ingresa", :login %></li>
+      <li><%= link_to 'Login with Twitter', auth_at_provider_path(:provider => :twitter) %></li> 
+
     <% end %>
 
       </ul>
