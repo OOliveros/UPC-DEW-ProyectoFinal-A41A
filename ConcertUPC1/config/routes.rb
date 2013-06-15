@@ -1,4 +1,7 @@
 ConcertsUPC::Application.routes.draw do
+  resources :comments
+
+
   get "user_sessions/new"
   get "user_sessions/create"
   get "user_sessions/destroy"
@@ -13,8 +16,16 @@ ConcertsUPC::Application.routes.draw do
     end
     member do
       get "add_concert"
+    end  
+  end  
+
+   resources :comments do
+    member do
+      get "add_comment"
     end
-  
+        member do
+      get "add_comment_new"
+    end
   end  
 
   resources :concerts

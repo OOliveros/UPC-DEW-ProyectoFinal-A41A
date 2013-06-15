@@ -13,6 +13,7 @@
     <th></th>
     <th></th>
    <th></th>
+   <th></th>
    </tr>
 
 <% @concerts.each do |concert| %>
@@ -30,6 +31,8 @@
     <td><%= link_to 'Editar', edit_concert_path(concert) %></td>
     <td><%= link_to 'Eliminar', concert, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     <%end%>
+     <td><%= link_to 'Comentar', add_comment_comment_path(concert) %></td>
+
   </tr>
 <% end %>
 </table>

@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Titulo Comentario:</b>
+  <%= @comment.title %>
+</p>
+<p>
+  <b>Usuario Tweeter:</b>
+  <%= @comment.user %>
+</p>
+
+<p>
+  <b>Comentario:</b>
+  <%= @comment.message %>
+</p>
+
+<%= link_to 'Regresar', concerts_path %>

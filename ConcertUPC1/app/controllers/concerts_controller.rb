@@ -1,4 +1,5 @@
 class ConcertsController < ApplicationController
+  
   # GET /concerts
   # GET /concerts.json
   def index
